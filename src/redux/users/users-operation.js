@@ -1,16 +1,15 @@
-// import { instance } from "../../api/Api";
+import { instance } from "../../api/Api";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-export const instance = axios.create({
-  baseURL: "https://6492eafc428c3d2035d0e662.mockapi.io/api/",
-});
+// import axios from "axios";
+// export const instance = axios.create({
+//   baseURL: "https://6492eafc428c3d2035d0e662.mockapi.io/api/",
+// });
 
 export const getUsers = createAsyncThunk(
   "users/getUsers",
   async (_, { rejectWithValue }) => {
     try {
       const users = await instance.get("/users");
-      // console.log("users.data", users.data);
       return users.data;
     } catch (error) {
       return rejectWithValue(error.message);
