@@ -10,6 +10,9 @@ export const userSlice = createSlice({
   name: "users",
   initialState,
   reducers: {
+    setData: (state, { payload }) => {
+      state.data = payload;
+    },
     filterItems: (state, { payload }) => {
       state.filter = payload;
     },
@@ -21,4 +24,4 @@ export const userSlice = createSlice({
   },
 });
 
-export const { filterItems } = userSlice.actions;
+export const { setData, filterItems } = userSlice.actions;
