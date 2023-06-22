@@ -1,20 +1,15 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import ScrollToTop from "react-scroll-up";
-import toast from "react-hot-toast";
 import { TfiArrowCircleUp } from "react-icons/tfi";
 import { HiArrowSmLeft } from "react-icons/hi";
-import {
-  BackBtn,
-  UserCard,
-  UserList,
-  BackBtnWrapper,
-} from "./UsersList.styled";
-import { getUsers } from "../../api/Api";
-import { ButtonLoadMore } from "../ButtonLoadMore/ButtonLoadMore";
+import { BackBtn, UserCard, UserList, BtnWrapper } from "./UserList.styled.jsx";
+import { LoadMoreBtn } from "../LoadMoreBtn/LoadMoreBtn";
 import UserItem from "../UserItem/UserItem";
 import { Loader } from "../Loader/Loader";
-import CardFilter from "../CardFilter/CardFilter";
+import CardFilter from "../CardFilter/CardsFilter.jsx";
+import { getUsers } from "../../redux/users/users-operation.js";
 
 const UsersList = () => {
   const [users, setUsers] = useState([]);
@@ -84,13 +79,13 @@ const UsersList = () => {
 
   return (
     <>
-      <BackBtnWrapper>
+      <BtnWrapper>
         <BackBtn onClick={() => navigate("/")}>
           <HiArrowSmLeft size="20" />
           Go back
         </BackBtn>
         <CardFilter handleChange={handleChange} />
-      </BackBtnWrapper>
+      </BtnWrapper>
       <UserList>
         {users.map((user) => (
           <UserCard key={user.id}>
@@ -98,7 +93,7 @@ const UsersList = () => {
           </UserCard>
         ))}
       </UserList>
-      {showLoadMoreBtn && <ButtonLoadMore onClickButton={loadMoreCards} />}
+      {showLoadMoreBtn && <LoadMoreBtn onClickButton={loadMoreCards} />}
       {isLoading && <Loader />}
       <ScrollToTop
         showUnder={160}
@@ -114,7 +109,8 @@ const UsersList = () => {
         }}
       >
         <span>
-          <TfiArrowCircleUp size="50" />
+          {" "}
+          <TfiArrowCircleUp size="50" />{" "}
         </span>
       </ScrollToTop>
     </>

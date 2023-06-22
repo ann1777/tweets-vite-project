@@ -1,9 +1,9 @@
-import UserItem from "../../components/UserItem/UserItem";
+import UserList from "../../components/UserList/UserList";
 
 const TweetsPage = () => {
   return (
     <main>
-      <UserItem />
+      <UserList />
     </main>
   );
 };
