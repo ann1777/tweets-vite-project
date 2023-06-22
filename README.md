@@ -2,6 +2,8 @@
 
 ## Project description
 
+Create minimal working App according Project requirements
+
 ## Project requirements
 
 1. Create user cards according to the layout.
