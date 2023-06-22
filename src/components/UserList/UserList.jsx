@@ -19,8 +19,7 @@ const UsersList = () => {
   const filteredUsers = useSelector(selectFilteredUsers);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  const [setShowLoadMoreBtn] = useState(true);
-  // const [selectValue, setSelectValue] = useState("");
+  const [showLoadMoreBtn, setShowLoadMoreBtn] = useState(true);
 
   const navigate = useNavigate();
 
@@ -93,7 +92,7 @@ const UsersList = () => {
           </li>
         ))}
       </UserList>
-      {filteredUsers.length >= sliceEnd && (
+      {showLoadMoreBtn && (
         <LoadMoreBtn
           type="button"
           onClickButton={() => setSliceEnd(sliceEnd + 3)}

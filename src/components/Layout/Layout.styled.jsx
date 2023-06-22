@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 
 export const StyledHeader = styled.header`
   width: 100vh;
-  display: flex;
-  align-items: center;
+  /* display: flex; */
   justify-content: center;
   padding: 8px 16px;
+  margin: 0 auto;
   margin-bottom: 20px;
   /* background-color: #5cd3a8; */
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
