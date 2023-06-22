@@ -28,7 +28,6 @@ const UserItem = ({ user }) => {
       </AvatarWrapper>
       <TweetsCounter>{user.tweets.toLocaleString()} TWEETS</TweetsCounter>
       <FollowersCounter>
-        {/* {followers.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "} */}
         {user.followers.toLocaleString()} FOLLOWERS{" "}
       </FollowersCounter>
       <FollowBtn

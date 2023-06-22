@@ -19,7 +19,7 @@ const UsersList = () => {
   const filteredUsers = useSelector(selectFilteredUsers);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
-  const [showLoadMoreBtn, setShowLoadMoreBtn] = useState(true);
+  const [setShowLoadMoreBtn] = useState(true);
   // const [selectValue, setSelectValue] = useState("");
 
   const navigate = useNavigate();

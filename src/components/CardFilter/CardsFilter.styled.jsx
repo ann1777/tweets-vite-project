@@ -3,7 +3,7 @@ import { BiFilterAlt } from "react-icons/bi";
 
 export const FilterBox = styled.div`
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
 `;
 
 export const StyledIcon = styled(BiFilterAlt)`

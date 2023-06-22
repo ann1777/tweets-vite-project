@@ -16,21 +16,21 @@ export const AppLogo = styled.img`
 
 export const AvatarWrapper = styled.div`
   position: absolute;
-  left: 150px;
-  top: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 208px;
+  top: 378px;
   width: 80px;
   height: 80px;
   background: #ebd8ff;
   box-shadow: 0px 4.39163px 4.39163px rgba(0, 0, 0, 0.06),
     inset 0px -2.19582px 4.39163px #ae7be3,
     inset 0px 4.39163px 3.29372px #fbf8ff;
-  border-radius: 85.9232px;
+  border-radius: 50%;
 `;
 
 export const UserAvatar = styled.img`
-  position: absolute;
-  left: 9.48px;
-  top: 9.42px;
   width: 62px;
   height: 62px;
   border-radius: 50%;
@@ -76,6 +76,10 @@ export const FollowBtn = styled.button`
   box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
   border-radius: 10.3108px;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  background: ${({ following }) => (following ? "#5CD3A8" : "#ebd8ff")};
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+  border-radius: 10.3108px;
   :hover,
   :focus {
     box-shadow: 10px 10px 5px -1px rgba(87, 190, 230, 0.2);

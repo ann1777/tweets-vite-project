@@ -1,10 +1,11 @@
+import { Container } from "./TweetsPage.styled";
 import UserList from "../../components/UserList/UserList";
 
 const TweetsPage = () => {
   return (
-    <main>
+    <Container>
       <UserList />
-    </main>
+    </Container>
   );
 };
 
