@@ -4,15 +4,19 @@ import { toast } from "react-toastify";
 import ScrollToTop from "react-scroll-up";
 import { TfiArrowCircleUp } from "react-icons/tfi";
 import { HiArrowSmLeft } from "react-icons/hi";
-import { BackBtn, UserCard, UserList, BtnWrapper } from "./UserList.styled.jsx";
+import { BackBtn, UserList, BtnWrapper } from "./UserList.styled.jsx";
 import { LoadMoreBtn } from "../LoadMoreBtn/LoadMoreBtn";
 import UserItem from "../UserItem/UserItem";
 import { Loader } from "../Loader/Loader";
 import CardFilter from "../CardFilter/CardsFilter.jsx";
 import { getUsers } from "../../redux/users/users-operation.js";
+import { useSelector } from "react-redux";
+import { selectFilteredUsers } from "../../redux/users/user-selectors.js";
 
 const UsersList = () => {
   const [users, setUsers] = useState([]);
+  const [sliceEnd, setSliceEnd] = useState(3);
+  const filteredUsers = useSelector(selectFilteredUsers);
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [showLoadMoreBtn, setShowLoadMoreBtn] = useState(true);
@@ -52,6 +56,7 @@ const UsersList = () => {
         setShowLoadMoreBtn(false);
         const response = await getUsers(page);
         setShowLoadMoreBtn(true);
+        setPage(1);
 
         if (page === 1) {
           setUsers(response);
@@ -72,11 +77,6 @@ const UsersList = () => {
     getAllUsers();
   }, [page]);
 
-  const loadMoreCards = () => {
-    setPage((prev) => prev + 1);
-    setIsLoading(true);
-  };
-
   return (
     <>
       <BtnWrapper>
@@ -87,13 +87,18 @@ const UsersList = () => {
         <CardFilter handleChange={handleChange} />
       </BtnWrapper>
       <UserList>
-        {users.map((user) => (
-          <UserCard key={user.id}>
+        {filteredUsers.slice(0, sliceEnd).map((user) => (
+          <li key={user.id}>
             <UserItem user={user} />
-          </UserCard>
+          </li>
         ))}
       </UserList>
-      {showLoadMoreBtn && <LoadMoreBtn onClickButton={loadMoreCards} />}
+      {filteredUsers.length >= sliceEnd && (
+        <LoadMoreBtn
+          type="button"
+          onClickButton={() => setSliceEnd(sliceEnd + 3)}
+        />
+      )}
       {isLoading && <Loader />}
       <ScrollToTop
         showUnder={160}
