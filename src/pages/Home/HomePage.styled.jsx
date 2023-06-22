@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 export const StyledHome = styled.section`
-  width: 480px;
-  margin: 140px auto;
-  padding: 0px 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  max-height: auto;
+  margin: 140px auto;
+  padding: 0px 15px;
 `;
 
 export const StyledLogo = styled.img`

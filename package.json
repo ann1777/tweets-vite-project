@@ -2,7 +2,7 @@
   "name": "tweets-vite-project",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://ann1777.github.io/goit-test-task/",
+  "homepage": "https://ann1777.github.io/tweets-vite-project/",
   "type": "module",
   "scripts": {
     "start": "set NODE_ENV=dev && node app.js",

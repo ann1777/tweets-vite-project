@@ -19,8 +19,8 @@ export const AvatarWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  left: 208px;
-  top: 378px;
+  top: 40%;
+  left: 40%;
   width: 80px;
   height: 80px;
   background: #ebd8ff;
@@ -82,6 +82,7 @@ export const FollowBtn = styled.button`
   border-radius: 10.3108px;
   :hover,
   :focus {
+    background: ${({ following }) => (following ? "#439e7c" : "#a497b3")};
     box-shadow: 10px 10px 5px -1px rgba(87, 190, 230, 0.2);
     scale: 1.02;
   }
@@ -96,6 +97,10 @@ export const UserCardDivider = styled.div`
 `;
 
 export const UserItemWrapper = styled.div`
+  position: relative;
+  justify-content: center;
+  align-items: center;
+
   width: 380px;
   height: 460px;
   background: linear-gradient(
