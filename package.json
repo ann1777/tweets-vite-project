@@ -5,7 +5,6 @@
   "homepage": "https://ann1777.github.io/tweets-vite-project/",
   "type": "module",
   "scripts": {
-    "start": "set NODE_ENV=dev && node app.js",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
