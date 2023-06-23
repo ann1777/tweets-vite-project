@@ -14,7 +14,7 @@ const Layout = () => {
       <PageContainer>
         <StyledHeader>
           <StyledNav>
-            <StyledLink to="/">Home</StyledLink>
+            <StyledLink to="/tweets-vite-project/">Home</StyledLink>
             <StyledLink to="/tweets">Tweets</StyledLink>
           </StyledNav>
         </StyledHeader>
