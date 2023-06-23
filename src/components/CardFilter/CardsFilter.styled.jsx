@@ -9,7 +9,10 @@ export const FilterBox = styled.div`
 export const StyledIcon = styled(BiFilterAlt)`
   height: 36px;
   width: 36px;
-  color: #471ca9;
-
+  color: #d318ff;
   margin-right: 10px;
+  :hover,
+  :focus {
+    color: #303f9f;
+  }
 `;

@@ -1,6 +1,14 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
+export const PageContainer = styled.main`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+`;
+
 export const StyledHeader = styled.header`
   width: 100vh;
   /* display: flex; */
@@ -8,7 +16,7 @@ export const StyledHeader = styled.header`
   padding: 8px 16px;
   margin: 0 auto;
   margin-bottom: 20px;
-  /* background-color: #5cd3a8; */
+  background-color: #5cd3a8;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
   > nav {

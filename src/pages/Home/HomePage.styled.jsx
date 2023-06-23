@@ -6,7 +6,7 @@ export const StyledHome = styled.section`
   align-items: center;
   justify-content: center;
   max-height: auto;
-  margin: 140px auto;
+  margin: 140px 80px;
   padding: 0px 15px;
 `;
 

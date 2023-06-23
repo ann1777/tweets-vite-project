@@ -33,12 +33,13 @@ export const BackBtn = styled.button`
 
 export const UserList = styled.ul`
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  flex-direction: row;
 
   gap: 30px;
   list-style: none;
 
-  @media screen and (min-width: 1280px) {
+  @media screen and (min-width: 728px) {
     flex-direction: row;
     flex-wrap: wrap;
   }
