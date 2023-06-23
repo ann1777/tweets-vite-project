@@ -18,7 +18,6 @@ export const StyledLogo = styled.img`
 `;
 
 export const WelcomeMsg = styled.p`
-  display: flex;
   margin: 40px auto;
 
   text-align: center;

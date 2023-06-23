@@ -15,9 +15,10 @@ const App = () => {
   useEffect(() => {
     dispatch(getUsers());
   }, [dispatch]);
+
   return (
     <>
-      <Suspense>
+      <Suspense fallback={<div>Loading...</div>}>
         <Provider store={store}>
           <Routes>
             <Route path="/" element={<Layout />}>
